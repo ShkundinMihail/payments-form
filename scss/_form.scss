@@ -49,7 +49,7 @@
                 width: 18px;
                 height: 18px;
                 transform: translate(-50%, -50%);
-                background-image: url("/images/checkbox-ok-gray.svg");
+                background-image: url("./images/checkbox-ok-gray.svg");
                 background-size: contain;
                 background-position: center;
                 transition: 0.3s;
@@ -219,7 +219,7 @@
                     height: 19px;
                     border-radius: 100%;
                     background-color: $color_green;
-                    background-image: url("../images/checkbox-ok-white.svg");
+                    background-image: url("./images/checkbox-ok-white.svg");
                     background-position: center;
                     background-size: contain;
                     transition: 0.3s;
