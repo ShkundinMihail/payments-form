@@ -1,0 +1,34 @@
+@mixin width-container668 {
+    width: 100%;
+    max-width: 668px;
+}
+@mixin disp_flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin disp_flex_sp-bettween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin reset_fieldset {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-block-start: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-block-end: 0;
+    min-inline-size: 0;
+}
+//костыли своего рода, т.к. используются не часто. В форме потребовалось уменьшить некоторые элементы.
+@mixin mobile360() {
+    @media screen and (max-width: 359px) {
+        @content;
+    }
+}
+@mixin mobile310() {
+    @media screen and (max-width: 309px) {
+        @content;
+    }
+}

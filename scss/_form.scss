@@ -1,0 +1,280 @@
+@import "./mixin";
+@import "./variables";
+
+.form {
+    width: 100%;
+    margin-top: 34px;
+    margin-bottom: 75px;
+    @include disp_flex_sp-bettween;
+    flex-direction: column;
+    gap: 14.5px;
+    &__title {
+        // Rechnungsanschrift
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+        margin: 0;
+        width: 92%;
+    }
+    &__checkbox {
+        //сам чекбокс и по совместительству всё что с ним связано.
+        display: none; // было бы логичнее сделать секцию , а не это всё
+        &-container {
+            // сам контейнер с чекбоксом и описанием
+            display: flex;
+            margin-right: 13px;
+            flex-direction: row;
+            width: 90%;
+            border: none;
+            outline: none;
+            &_margin {
+                margin-top: 40px;
+                margin-bottom: 6px;
+            }
+        }
+        &-fake {
+            // блок заменяющий стандартный вид чекбокса на кастом
+            cursor: pointer;
+            margin: 1px 13px auto 0;
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border: 1px solid $color_gray;
+            position: relative;
+            &::before {
+                // в состоянии актив. Не знаю как правильно засунуть в эту пирамиду
+                content: ""; //связь между классами поэтому прописал в конце файла
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 18px;
+                height: 18px;
+                transform: translate(-50%, -50%);
+                background-image: url("/images/checkbox-ok-gray.svg");
+                background-size: contain;
+                background-position: center;
+                transition: 0.3s;
+                opacity: 0;
+            }
+        }
+        &-description {
+            //текст рядом с чекбоксом
+            max-width: 530px;
+            width: 100%;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            cursor: pointer;
+        }
+    }
+    &__container-input {
+        //fieldset в который помещены названия и инпуты
+        @include reset_fieldset;
+        width: 92%;
+        outline: none;
+        padding: 0;
+        border: 1px solid $color_middle-gray;
+        border-radius: 5px;
+        padding: 10px;
+        position: relative;
+        &-dual {
+            // 3 и 4 колонка с инпутами
+            @include disp_flex_sp-bettween;
+            padding: 0;
+            width: calc(92% + 20px);
+            outline: none;
+            border: 1px solid $color_middle-gray;
+            border-radius: 5px;
+            overflow: hidden;
+            &-diving-line {
+                // без костылей никуда. Разделительная линия в 3 и 4 колонке
+                height: 70px;
+                border-right: 1px solid $color_middle-gray;
+            }
+        }
+        &_row-max {
+            // контейнер имеющий больший размер в 3 и 4 колонке
+            @include reset_fieldset;
+            padding: 10px 0 10px 10px;
+            width: 100%;
+            border: none;
+        }
+        &_row-min {
+            // контейнер имеющий меньший размер в 3 и 4 колонке
+            @include reset_fieldset;
+            padding: 10px;
+            max-width: 135px;
+            width: 100%;
+            border: none;
+        }
+        &-warn-icon {
+            position: absolute;
+            top: 29%;
+            right: 10px;
+        }
+    }
+    &__input {
+        //сам инпут название + значение
+        &-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            margin: 0 0 7px 3px;
+            color: $color_middle-gray;
+            display: table;
+            padding: 0;
+        }
+        &-value {
+            border: none;
+            outline: none;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin: 0 3px 0 3px;
+            width: 99%;
+        }
+    }
+    &__agreement {
+        //текст предупреждающий о чём-то на немецком языке. Находится перед Zahlungsdaten
+        &-container {
+            max-width: 580px;
+            margin-left: 35px;
+            & * {
+                display: inline;
+                line-height: 1.3rem;
+                letter-spacing: 0.4px;
+            }
+        }
+        &-link {
+            color: black;
+            font-weight: bold;
+            text-decoration: underline;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+    &__payments {
+        //контейнер с чекбоксом , что-то связаное с платежами
+        @include disp_flex_center;
+        flex-direction: column;
+        width: 92%;
+        padding-top: 2px;
+        &-title-container {
+            //контейнер с названием и иконкой
+            @include disp_flex_sp-bettween;
+            width: 92%;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            &-text {
+                //Zahlungsdaten
+                font-weight: 700;
+                line-height: 1.5rem;
+                letter-spacing: 0.3px;
+            }
+            &-icon {
+                //иконка восклицательный знак
+                margin-top: -8px;
+            }
+        }
+        &-checkbox {
+            // вся зона с чекбоксом и картинкой
+            background-color: $color_light-gray;
+            @include disp_flex_sp-bettween;
+            width: 100%;
+            max-width: 100%;
+            border-radius: 5px;
+            padding: 35px 0 20px 0;
+            flex-direction: row;
+            &-container {
+                // здесь реализован чекбокс и его название
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 0;
+                margin-left: 15px;
+                border: none;
+            }
+            &-name {
+                //название
+                font-size: 1.1rem;
+                letter-spacing: 1.5px;
+                margin-left: 15px;
+                cursor: pointer;
+            }
+            &-fake {
+                //блок заменяющий стандартный вид чекбокса
+                display: block;
+                width: 18px;
+                height: 18px;
+                border-radius: 100%;
+                background-color: $color_white;
+                border: 2px solid $color_green;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: block;
+                    width: 19px;
+                    height: 19px;
+                    border-radius: 100%;
+                    background-color: $color_green;
+                    background-image: url("../images/checkbox-ok-white.svg");
+                    background-position: center;
+                    background-size: contain;
+                    transition: 0.3s;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+            }
+            &-value {
+                //сам чекбокс скрыт
+                display: none;
+            }
+            &-img {
+                //картинка с платежными системами
+                margin-right: 12px;
+                transform: scale(1.03);
+            }
+        }
+    }
+    &__submit {
+        //кнопка в самом конце формы желтого цвета
+        width: 87%;
+        height: 60px;
+        border: none;
+        margin-top: -15px;
+        border-radius: 5px;
+        background-color: $color_yellow-button;
+        font-weight: 800;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+}
+//прочие костыли которые не получилось прописать в пирамиду
+@include mobile360 {
+    .form__payments-checkbox-img {
+        transform: scale(0.9);
+    }
+    .form__payments-checkbox-name {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-left: 5px;
+    }
+}
+@include mobile310 {
+    .form__payments-checkbox-img {
+        transform: scale(0.8);
+    }
+    .form__payments-checkbox-name {
+        font-size: 0.8rem;
+        letter-spacing: 0.8px;
+        margin-left: 2px;
+    }
+}
+.form__checkbox:checked + .form__checkbox-fake::before {
+    opacity: 1;
+}
+.form__payments-checkbox-value:checked + .form__payments-checkbox-fake::before {
+    opacity: 1;
+}

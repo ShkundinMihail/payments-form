@@ -1,0 +1,226 @@
+@import "./mixin";
+@import "./variables";
+@import "./form";
+@import url("./vendor/normalize.css");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    @include disp_flex_center;
+    flex-direction: column;
+    font-family: "Arial Narrow Bold", sans-serif;
+    min-width: 262px;
+}
+
+.header {
+    @include width-container668;
+    @include disp_flex_center;
+    min-height: 77px;
+    background-color: $color_yellow;
+    &__container {
+        @include disp_flex_sp-bettween;
+        width: 92%;
+    }
+    &__nav-menu {
+        @include disp_flex_sp-bettween;
+        width: 215px;
+        padding-top: 7px;
+        padding-left: 20px;
+    }
+    &__nav-btn {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    &__nav-btn-img {
+        margin: 0; //чтобы что-то было
+    }
+}
+/*main*/ ///////////////////////////////
+.content {
+    @include width-container668;
+}
+/*route*/ //////////////////////////////
+.route {
+    @include width-container668;
+    @include disp_flex_center;
+    flex-direction: column;
+    min-height: 120px;
+    background-color: $color_light-gray;
+    &__container {
+        @include disp_flex_sp-bettween;
+        padding-left: 5px;
+        width: 69%;
+        margin-bottom: 9px;
+    }
+    &__circle {
+        border: 1px solid $color_gray;
+        min-width: 37px;
+        height: 37px;
+        border-radius: 100%;
+        @include disp_flex_center;
+        background: $color_white;
+        &_active {
+            border: 2px solid $color_green;
+        }
+        &-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        &-text_active {
+            color: $color_green;
+        }
+    }
+    &__line {
+        width: 35%;
+        border: 2px solid $color_gray;
+
+        &_active {
+            border: 2px solid $color_green;
+        }
+    }
+    &__info-zone {
+        @include disp_flex_sp-bettween;
+        padding-top: 3px;
+        padding-left: 17px;
+        width: 85%;
+    }
+    &__info-zone-text {
+        font-size: 1rem;
+        font-weight: 800;
+        padding-right: 15px;
+        text-align: center;
+    }
+}
+/*form*/ ///////////////////////////////////////////////////// слишком большой ./_form.scss
+
+/////price-info////////////////////////////////////////////////
+.price-info {
+    width: 100%;
+    border-radius: 5px;
+    background-color: $color_light-gray;
+    padding: 32px 0 70px 0;
+    &__container {
+        width: 93%;
+        margin: 0 auto;
+    }
+    &__title {
+        &-sum {
+            text-align: right;
+            margin-bottom: 8px;
+        }
+        &-marke {
+            @extend .price-info__title-sum;
+            text-align: left;
+        }
+        &-warn {
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+        }
+        &-package {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        &-netto {
+            font-size: 18px;
+            font-weight: normal;
+        }
+        &-brutto {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.7px;
+        }
+    }
+    &__description {
+        &-sum {
+            letter-spacing: 0.5px;
+            font-size: 18px;
+            font-weight: normal;
+        }
+        &-marke {
+            font-size: 18px;
+            letter-spacing: 0.3px;
+        }
+        &-product-weight {
+            @extend .price-info__description-sum;
+        }
+        &-product-number {
+            @extend .price-info__description-sum;
+            color: $color_middle-gray;
+        }
+        &-more-sum {
+            font-size: 15px;
+            font-weight: 800;
+        }
+        &-sum-netto {
+            @extend .price-info__description-sum;
+        }
+        &-sum-brutto {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+    }
+    &__container {
+        &-text {
+            max-width: max-content;
+            margin-bottom: 20px;
+        }
+        &-text-dual {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-bottom: 2px solid $color_light-plus-gray;
+            padding-bottom: 30px;
+        }
+        &-text-min {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            gap: 3px;
+        }
+        &-netto {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 35px 12px 15px 12px;
+            border-bottom: 3px solid black;
+        }
+        &-brutto {
+            @extend .price-info__container-netto;
+            border: none;
+            padding-top: 25px;
+        }
+    }
+}
+.footer {
+    width: 100%;
+    max-width: 668px;
+    margin-top: 25px;
+    padding: 30px 0 185px 0;
+    border-top: 1px solid $color_light-plus-gray;
+    &__container {
+        width: 80%;
+        margin-left: 20px;
+    }
+    &__copyright {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 35px;
+    }
+    &__information {
+        @extend .price-info__description-marke;
+        line-height: 35px;
+        letter-spacing: 0.8px;
+        margin-bottom: 25px;
+    }
+    &__title-company {
+        @extend .footer__copyright;
+        line-height: 35px;
+    }
+}

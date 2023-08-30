@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.min.css" />
+    <title>Shop</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <img src="./images/logo.png" alt="logo" class="header__logo" />
+        <nav class="header__nav-menu">
+          <button class="header__nav-btn">
+            <img
+              src="./images/nav-burger.png"
+              alt="burger"
+              class="header__nav-btn-img"
+            />
+          </button>
+          <button class="header__nav-btn">
+            <img
+              src="./images/nav-man.png"
+              alt="man"
+              class="header__nav-btn-img"
+            />
+          </button>
+          <button class="header__nav-btn">
+            <img
+              src="./images/nav-like.png"
+              alt="like"
+              class="header__nav-btn-img"
+            />
+          </button>
+          <button class="header__nav-btn">
+            <img
+              src="./images/nav-buy.png"
+              alt="byu"
+              class="header__nav-btn-img"
+            />
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main class="content">
+      <section class="route">
+        <div class="route__container">
+          <div class="route__circle route__circle_active">
+            <p class="route__circle-text route__circle-text_active">1</p>
+          </div>
+          <div class="route__line route__line_active"></div>
+          <div class="route__circle"><p class="route__circle-text">2</p></div>
+          <div class="route__line"></div>
+          <div class="route__circle"><p class="route__circle-text">3</p></div>
+        </div>
+        <div class="route__info-zone">
+          <span class="route__info-zone-text">Lorem ipsum dolor</span>
+          <span class="route__info-zone-text">Lorem ipsum dolor</span>
+          <span class="route__info-zone-text">Lorem ipsum dolor</span>
+        </div>
+      </section>
+      <form class="form" id="form" autocomplete="on">
+        <h1 class="form__title">Rechnungsanschrift</h1>
+        <label class="form__checkbox-container">
+          <input type="checkbox" class="form__checkbox" />
+          <span class="form__checkbox-fake"></span>
+          <p class="form__checkbox-description">
+            Ich benötige keine Rechnung per E-Mail oder per Post und gebe daher
+            keine Rechnungsadresse an (nachträgliche Rechnungserstellung nicht
+            möglich).
+          </p>
+        </label>
+        <!-- ------------------------------------------- -->
+        <fieldset class="form__container-input" id="userName">
+          <label class="form__input-title" id="userName"
+            >Ihr vollständiger Name *</label
+          >
+          <input
+            type="text"
+            placeholder="Vorname und Nachname"
+            class="form__input-value"
+          />
+        </fieldset>
+
+        <fieldset class="form__container-input">
+          <label class="form__input-title">Geburtsdatum *</label>
+          <input
+            type="text"
+            placeholder="tt / mm / jjjj"
+            class="form__input-value"
+          />
+        </fieldset>
+
+        <div class="form__container-input-dual">
+          <fieldset class="form__container-input_row-min">
+            <label class="form__input-title">PLZ *</label>
+            <input type="text" class="form__input-value" />
+          </fieldset>
+          <div class="form__container-input-dual-diving-line"></div>
+          <fieldset class="form__container-input_row-max">
+            <label class="form__input-title">Ort *</label>
+            <input type="text" class="form__input-value" />
+          </fieldset>
+        </div>
+
+        <div class="form__container-input-dual">
+          <fieldset class="form__container-input_row-max">
+            <label class="form__input-title">StraBe *</label>
+            <input type="text" class="form__input-value" />
+          </fieldset>
+          <div class="form__container-input-dual-diving-line"></div>
+          <fieldset class="form__container-input_row-min">
+            <label class="form__input-title">Nr . *</label>
+            <input type="text" class="form__input-value" />
+          </fieldset>
+        </div>
+        <!-- -------------------------- -->
+        <fieldset class="form__container-input">
+          <label class="form__input-title"
+            >Adresszusatz (z.B. 3. Stock, c/o...)</label
+          >
+          <input
+            type="text"
+            placeholder="z.B. 3. Stock, c/o..."
+            class="form__input-value"
+          />
+        </fieldset>
+        <fieldset class="form__container-input">
+          <label class="form__input-title">Telefon (z.B. 040123456) *</label>
+          <input
+            type="text"
+            placeholder="z.B. 040123456"
+            class="form__input-value"
+          />
+          <img
+            src="./images/warn-icon-black.png"
+            alt="!"
+            class="form__container-input-warn-icon"
+          />
+        </fieldset>
+        <fieldset class="form__container-input">
+          <label class="form__input-title">E-Mail *</label>
+          <input
+            type="text"
+            placeholder="email@com.com"
+            class="form__input-value"
+          />
+        </fieldset>
+        <label class="form__checkbox-container form__checkbox-container_margin">
+          <input
+            type="checkbox"
+            class="form__checkbox"
+            id="receiveInfoByMail"
+          />
+          <span class="form__checkbox-fake"></span>
+          <label for="receiveInfoByMail" class="form__checkbox-description">
+            Ja, ich möchte den E-Mail-Newsletter der Deutschen Post AG mit
+            aktuellen Angeboten, Rabatten und Informationen zu Postprodukten und
+            -dienstleistungen erhalten.
+          </label>
+        </label>
+        <div class="form__agreement-container">
+          <p class="form__agreement">
+            Den Bezug kann ich jederzeit beenden. Ich bin damit einverstanden,
+            dass der Newsletter individuell auf meine Interessen abgestimmt wird
+            und gestatte der Deutschen Post AG zu diesem Zweck die
+          </p>
+          <a href class="form__agreement-link">hier beschriebene</a>
+          <p class="form__agreement">
+            Verarbeitung meiner Daten. Diese Einwilligung kann ich jederzeit
+            widerrufen.
+          </p>
+        </div>
+
+        <div class="form__payments">
+          <div class="form__payments-title-container">
+            <h2 class="form__payments-title-text">Zahlungsdaten</h2>
+            <img
+              src="./images/warn-icon.png"
+              alt="warn"
+              class="form__payments-title-icon"
+            />
+          </div>
+          <div class="form__payments-checkbox">
+            <label class="form__payments-checkbox-container">
+              <input
+                type="checkbox"
+                id="payCheckbox"
+                class="form__payments-checkbox-value"
+              />
+              <span class="form__payments-checkbox-fake"></span>
+              <label for="payCheckbox" class="form__payments-checkbox-name"
+                >Kreditkarte</label
+              >
+            </label>
+            <img
+              src="./images/cardImg.png"
+              alt="card"
+              class="form__payments-checkbox-img"
+            />
+          </div>
+        </div>
+        <input class="form__submit" type="submit" value="Weiter" />
+      </form>
+      <section class="price-info">
+        <div class="price-info__container">
+          <div class="price-info__container-text">
+            <h3 class="price-info__title-sum">€2,45</h3>
+            <p class="price-info__description-sum">(inkl. 0,00 € USt.)</p>
+          </div>
+          <div class="price-info__container-text">
+            <h3 class="price-info__title-marke">Internetmarke</h3>
+            <p class="price-info__description-marke">
+              Anzahl Bogen: 1 x Paket zur Lieferung
+            </p>
+          </div>
+          <p class="price-info__title-warn">
+            Das Produkt wird Ihnen nach erfolgter Zahlung zur Lieferung
+            bearbeitet.
+          </p>
+          <h4 class="price-info__title-package">Bestehend aus:</h4>
+          <div class="price-info__container-text-dual">
+            <div class="price-info__container-text-min">
+              <p class="price-info__description-product-weight">
+                Gewicht bis zu 0.2 kg
+              </p>
+              <p class="price-info__description-product-number">
+                Liefernummer: 102400001
+              </p>
+            </div>
+            <div class="price-info__container-text-min">
+              <p class="price-info__description-more-sum">€2,45</p>
+              <p class="price-info__description-sum">(inkl. 0,00 € USt.)</p>
+            </div>
+          </div>
+          <div class="price-info__container-netto">
+            <h4 class="price-info__title-netto">Gesamtsumme Netto</h4>
+            <p class="price-info__description-sum-netto">€2,45</p>
+          </div>
+          <div class="price-info__container-brutto">
+            <h4 class="price-info__title-brutto">Gesamtsumme Brutto</h4>
+            <p class="price-info__description-sum-brutto">€2,45</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__container">
+        <p class="footer__copyright">© 2023 Deutsche Post AG</p>
+        <p class="footer__information">
+          Über die Deutsche Post | Impressum | Datenschutz |
+          Einwilligungs-Einstellungen | Rechtliche Hinweise
+        </p>
+        <p class="footer__title-company">Deutshe Post DHL Group</p>
+        <p class="footer__information">
+          Konzern | Karriere | Presse | Investoren
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
